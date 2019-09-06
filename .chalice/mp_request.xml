@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cpix:CPIX id="abc123" xmlns:cpix="urn:dashif:org:cpix" xmlns:pskc="urn:ietf:params:xml:ns:keyprov:pskc" xmlns:speke="urn:aws:amazon:com:speke" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:enc="http://www.w3.org/2001/04/xmlenc#">
+    <cpix:ContentKeyList>
+        <cpix:ContentKey kid="431a806f-5b13-4680-9cab-43febcd0081d">
+        </cpix:ContentKey>
+    </cpix:ContentKeyList>
+    <cpix:DRMSystemList>
+        <cpix:DRMSystem kid="431a806f-5b13-4680-9cab-43febcd0081d" systemId="9a04f079-9840-4286-ab92-e65be0885f95"> 
+            <cpix:PSSH /> 
+            <cpix:ContentProtectionData /> 
+            <cpix:URIExtXKey /> 
+            <speke:KeyFormat /> 
+            <speke:KeyFormatVersions /> 
+            <speke:ProtectionHeader />
+        </cpix:DRMSystem>
+    </cpix:DRMSystemList>
+    <cpix:ContentKeyPeriodList>
+        <cpix:ContentKeyPeriod id="keyPeriod_4ff2e55e-e3eb-4456-b3f8-e636be7f6747" index="0"/>
+    </cpix:ContentKeyPeriodList>
+    <cpix:ContentKeyUsageRuleList>
+        <cpix:ContentKeyUsageRule kid="431a806f-5b13-4680-9cab-43febcd0081d">
+            <cpix:KeyPeriodFilter periodId="keyPeriod_4ff2e55e-e3eb-4456-b3f8-e636be7f6747"/>
+        </cpix:ContentKeyUsageRule>
+    </cpix:ContentKeyUsageRuleList>
+</cpix:CPIX>
