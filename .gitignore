@@ -1,7 +1,6 @@
 .chalice/deployments/
 .chalice/deployed/
 .chalice/venv/
-.chalice/mp_request.xml
 .vscode
 build
 __pycache__
