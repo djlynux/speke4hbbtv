@@ -49,13 +49,13 @@ def getkeys():
             </cpix:DRMSystem>
         </cpix:DRMSystemList>
         <cpix:ContentKeyPeriodList>
-            <cpix:ContentKeyPeriod id="keyPeriod_4ff2e55e-e3eb-4456-b3f8-e636be7f6747" index="0" />
+            <cpix:ContentKeyPeriod id="keyPeriod_4ff2e55e-e3eb-4456-b3f8-e636be7f6747" index="0"/>
         </cpix:ContentKeyPeriodList>
         <cpix:ContentKeyUsageRuleList>
             <cpix:ContentKeyUsageRule kid="'''+KID+'''">
-                <cpix:KeyPeriodFilter periodId="keyPeriod_4ff2e55e-e3eb-4456-b3f8-e636be7f6747" />
-            </cpix:ContentKeyUsageRule>
-        </cpix:ContentKeyUsageRuleList>
+            <cpix:KeyPeriodFilter periodId="keyPeriod_4ff2e55e-e3eb-4456-b3f8-e636be7f6747"/>
+        </cpix:ContentKeyUsageRule>
+    </cpix:ContentKeyUsageRuleList>
     </cpix:CPIX>
     '''
 
