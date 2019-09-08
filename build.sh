@@ -4,7 +4,7 @@
 
 # Change the BUCKETNAME and TEMPLATENAME variables with your
 BUCKETNAME="subinh-pkgbuild"
-TEMPLATENAME="speke4hbbtv-dev.template"
+TEMPLATENAME="speke4hbbtv-build.template"
 
 # Build commands
 chalice package --merge-template templates/setup.template build/
