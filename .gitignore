@@ -2,7 +2,6 @@
 .chalice/deployed/
 .chalice/venv/
 .vscode
-build
+build/
 __pycache__
-spekepro-dev.template
 .DS_Store
