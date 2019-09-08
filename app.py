@@ -6,6 +6,7 @@ PSSH = os.environ['PSSH']
 PROHEADER = os.environ['PROHEADER']
 MYKEY = os.environ['MYKEY']
 DEBUGMODE = os.environ['DEBUGMODE']
+CONTENTID = os.environ['CONTENTID']
 
 # Importing modules from Chalice
 from chalice import Chalice, Response, IAMAuthorizer
@@ -31,9 +32,9 @@ def getkeys():
 
     # Sample SPEKE responses. This response was hardcoded. WRMHEADER was pre-created using an Elemental Live
     kresponse = '''
-    <cpix:CPIX xmlns:cpix="urn:dashif:org:cpix" xmlns:pskc="urn:ietf:params:xml:ns:keyprov:pskc" xmlns:speke="urn:aws:amazon:com:speke" id="abc123">
+    <cpix:CPIX xmlns:cpix="urn:dashif:org:cpix" xmlns:pskc="urn:ietf:params:xml:ns:keyprov:pskc" xmlns:speke="urn:aws:amazon:com:speke" id="''' +CONTENTID+ '''">
         <cpix:ContentKeyList>
-            <cpix:ContentKey explicitIV="OFj2IjCsPJFfMAxmQxLGPw==" kid="''' + KID + '''">
+            <cpix:ContentKey explicitIV="OFj2IjCsPJFfMAxmQxLGPw==" kid="''' +KID+ '''">
                 <cpix:Data>
                     <pskc:Secret>
                         <pskc:PlainValue>'''+MYKEY+'''</pskc:PlainValue>
