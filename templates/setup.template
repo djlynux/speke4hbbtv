@@ -22,6 +22,11 @@
             "Description": "Contentkey (base64)",
             "Type": "String",
             "Default": ""
+        },
+        "CONTENTID": {
+            "Description": "Content ID. Should use the same content ID in MediaPackage configuration",
+            "Type": "String",
+            "Default": ""
         }
     },
     "Mappings": {},
@@ -105,6 +110,9 @@
                         },
                         "MYKEY": {
                             "Ref": "MYKEY"
+                        },
+                        "CONTENTID": {
+                            "Ref": "CONTENTID"
                         },
                         "DEBUGMODE": "ENABLED"
                     }
