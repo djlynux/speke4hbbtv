@@ -2,7 +2,28 @@
     "AWSTemplateFormatVersion": "2010-09-09",
     "Description": "CF Template to create iam roles to access SPEKE server",
     "Metadata": {},
-    "Parameters": {},
+    "Parameters": {
+        "KID": {
+            "Description": "KID value (Guid)",
+            "Type": "String",
+            "Default": ""
+        },
+        "PSSH": {
+            "Description": "Playready PSSH value",
+            "Type": "String",
+            "Default": ""
+        },
+        "PROHEADER": {
+            "Description": "PlayReady Object header",
+            "Type": "String",
+            "Default": ""
+        },
+        "MYKEY": {
+            "Description": "Contentkey (base64)",
+            "Type": "String",
+            "Default": ""
+        }
+    },
     "Mappings": {},
     "Conditions": {},
     "Resources": {
@@ -58,6 +79,42 @@
                         }
                     }
                 ]
+            }
+        },
+        "APIHandler": {
+            "Type": "AWS::Serverless::Function",
+            "Properties": {
+                "Runtime": "python3.7",
+                "Handler": "app.app",
+                "CodeUri": "./deployment.zip",
+                "Tags": {
+                    "aws-chalice": "version=1.10.0:stage=dev:app=speke4hbbtv"
+                },
+                "Timeout": 60,
+                "MemorySize": 128,
+                "Environment": {
+                    "Variables": {
+                        "KID": {
+                            "Ref": "KID"
+                        },
+                        "PSSH": {
+                            "Ref": "PSSH"
+                        },
+                        "PROHEADER": {
+                            "Ref": "PROHEADER"
+                        },
+                        "MYKEY": {
+                            "Ref": "MYKEY"
+                        },
+                        "DEBUGMODE": "ENABLED"
+                    }
+                },
+                "Role": {
+                    "Fn::GetAtt": [
+                        "DefaultRole",
+                        "Arn"
+                    ]
+                }
             }
         }
     },
