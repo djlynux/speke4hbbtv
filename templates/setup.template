@@ -23,8 +23,8 @@
             "Type": "String",
             "Default": ""
         },
-        "CONTENTID": {
-            "Description": "Content ID. Should use the same content ID in MediaPackage configuration",
+        "RESOURCEID": {
+            "Description": "Resource ID. Should use the same content ID in MediaPackage configuration",
             "Type": "String",
             "Default": ""
         }
@@ -112,7 +112,7 @@
                             "Ref": "MYKEY"
                         },
                         "CONTENTID": {
-                            "Ref": "CONTENTID"
+                            "Ref": "RESOURCEID"
                         },
                         "DEBUGMODE": "ENABLED"
                     }
