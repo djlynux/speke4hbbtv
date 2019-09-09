@@ -5,7 +5,7 @@ Speke4hbbtv is a reference SPEKE implementation to test PlayReady DRM Keyserver 
 
 ## Installation
 
-You can use this cloudformation template to deploy the reference server in your AWS account. 
+You may be able to use this cloudformation template [speke4hbbtv-build.template](speke4hbbtv-build.template) to deploy the reference server in your AWS account. We recommend you to build your own package.
 
 If you want to build the entire package by yourself, follow the steps below.
 
@@ -48,24 +48,27 @@ Make sure that these packages are already installed in your system.
    BUCKETNAME="speke4hbbtv-pkgbuild"
    TEMPLATENAME="speke4hbbtv-dev.template"
    ```
-7. After making the changes mentioned in the step 7, run the build file to create the cloudformation template and also the build files. Lamabda scripts will be zipped and copied to the S3 bucket that you have configured.
+7. After making the changes mentioned in the step 7, run `build.sh` to create the cloudformation template and also the build files. Lamabda scripts will be zipped and copied to the S3 bucket that you have configured earlier.
    ```
    sh build.sh
    ```
-8. There are basically two build files, one is a cloudformation template which will be copied at the `build` directory and a zipped lambda codes will be uploaded to the s3 bucket that you've created in step 5.
+8. There are basically two build files, one is a cloudformation template which will be created in the main folder itself and the zipped lambda codes will be uploaded to the s3 bucket that you've created in step 5.
 9. You can deploy the cloudformation template in your AWS account via web console or CLI.
 
-## Deployment
+### Deployment
 * Go to the cloudformation service page in AWS console.
 * Click on create new stack and choose the `YAML` file that we have created earlier. Then click the next button.
-* In the next page fill in all the encryption specific parameters that you can obtain from your DRM provider[screenshot]. Then wait till the deployment is completed.
-* Once the deployment is completed, click on the output section of the stack you've just created.
-* Note down the parameters `KeyServerURL` and `MPAccessRoleArn`
-* Create a new dash end-point in mediapckage channel.
-* Under packager settings, expand the additional configuration. Then Select `hbbtv1.5` from the drop down list and also choose `Compact` manifest.
+* In the next page fill in all the encryption specific parameters that you can obtain from your DRM provider. Then wait till the deployment is completed.
+![cfui1](docs/images/cfui1.png)
+* Once the deployment is completed, click on the output section of the stack you've just created and note down the parameters `KeyServerURL` and `MPAccessRoleArn`
+![cfui2](docs/images/cfui2.png)
+* Create a new dash end-point in your mediapckage channel.
+* Under packager settings, expand the additional configuration. Then Select `hbbtv1.5` from the drop down list and also choose `Compact` manifest. Make sure that you've also selected time with
+![mp1](docs/images/mp1.png)
 * Then at the encryption settings choose `Resource ID`, which is same as the the environment variable that you choose during CF deployment. Then also choose `System ID` for playready (`9a04f079-9840-4286-ab92-e65be0885f95`)
-*  Then update the URL and Role ARN section with the results from the CF template outputs.
-
+*  Then update the URL and Role ARN section with the results from the CF template outputs. Make sure that `Key rotation interval (sec)` as zero.
+![mp2](docs/images/mp2.png)
+* If you want to change the DRM configuration to a new key, you can go to the lambda configuration and change the environment variables there.
 ### Author
 * Subin Hutton(@djlynux): subinh.dev@gmail.com
 
