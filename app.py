@@ -73,7 +73,7 @@ def getkeys():
         app.log.debug("KID:" + KID)
         app.log.debug("Content-Key:" + MYKEY)
         app.log.debug("PSSH-Header:" + PSSH)
-        app.log.debug("PRO-HEADER" + PROHEADER)
+        app.log.debug("PRO-HEADER:" + PROHEADER)
         statuscode="200"
 
     else:
