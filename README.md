@@ -75,7 +75,7 @@ Make sure that these packages are already installed in your system.
 ### References
 
 * Chalice: https://chalice.readthedocs.io/en/latest/
-* PlayReady: https://docs.microsoft.com/en-us/playready/specifications/playready-header-specification
+* PlayReady Header Specification: https://docs.microsoft.com/en-us/playready/specifications/playready-header-specification
 * SPEKE: https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html
 
 
