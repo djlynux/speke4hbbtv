@@ -95,7 +95,7 @@ def getkeys():
         }
     )
 
-# Lambda function to provide heartbeat status for SPEKE server
+# Provide heartbeat status for SPEKE server
 @app.route('/get/heartbeat', methods=['GET'], authorizer=authorizer)
 def spekeheartbeat():
     return {"Status": "OK"}

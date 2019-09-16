@@ -5,7 +5,7 @@ Speke4hbbtv is a reference SPEKE implementation to test PlayReady DRM Key Server
 
 ## Installation
 
-You may be able to use this cloudFormation template [speke4hbbtv-build.template](speke4hbbtv-build.template) to deploy the reference server in your AWS account. We recommend you to build your own package.
+You may be able to use this cloudFormation template [speke4hbbtv-build.template](build/speke4hbbtv-build.template) to deploy the reference server in your AWS account. We recommend you to build your own package.
 
 If you want to build the entire package by yourself, follow the steps below.
 
@@ -52,7 +52,7 @@ Make sure that these packages are already installed in your system.
    ```
    sh build.sh
    ```
-8. There are basically two build files, one is a CloudFormation template which will be created in the main folder itself and the zipped lambda codes will be uploaded to the s3 bucket that you've created in step 5.
+8. There are basically two build files, one is a CloudFormation template which will be created in the build folder and the zipped lambda codes will be uploaded to the s3 bucket that you've created in step 5.
 9. You can deploy the CloudFormation template in your AWS account via web console or CLI.
 
 ### Deployment

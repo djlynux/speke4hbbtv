@@ -8,4 +8,4 @@ TEMPLATENAME="speke4hbbtv-build.template"
 
 # Build commands
 chalice package --merge-template templates/setup.template build/
-aws cloudformation package --template-file build/sam.json --s3-bucket $BUCKETNAME --output-template-file $TEMPLATENAME
+aws cloudformation package --template-file build/sam.json --s3-bucket $BUCKETNAME --output-template-file build/$TEMPLATENAME
